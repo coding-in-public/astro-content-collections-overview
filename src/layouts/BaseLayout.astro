@@ -1,0 +1,55 @@
+---
+const {
+  title = "Content Collections",
+  description = "A site about Content Collections with Astro.",
+} = Astro.props;
+import "../styles/main.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/posts/">Posts</a>
+    </nav>
+  </body>
+  <main>
+    <slot />
+  </main>
+</html>
+
+<style>
+  body {
+    display: grid;
+    align-items: start;
+    align-content: start;
+    gap: var(--size-fluid-3);
+    grid-template-rows: auto, 1fr;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: var(--size-fluid-3);
+    color: var(--blue-12);
+    background-size: cover;
+    background-image: linear-gradient(to top, var(--blue-0), var(--stone-0)),
+      var(--noise-5);
+  }
+
+  main {
+    margin-inline: auto;
+    max-width: 1500px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--size-2);
+  }
+</style>

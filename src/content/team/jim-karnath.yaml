@@ -1,0 +1,9 @@
+name: Jim Karnath
+bio: Jim Karnath is an innovative software engineer with 15+ years of experience. His expertise encompasses web development, data analysis, and AI. Jim is a creative problem-solver who consistently delivers exceptional results.
+headshot: "./jim-karnath.jpg"
+role: Software
+email: jim@company.com
+owned_services:
+  - OpenShift Ansible Broker
+  - OpenShift Container Platform
+  - Red Hat Satellite

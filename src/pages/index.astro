@@ -1,16 +1,25 @@
 ---
-
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+const posts = await getCollection("posts");
+const services = await getCollection("services", (entry) =>
+  import.meta.env.PROD ? entry.data.available : true
+);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <div class="homepage">
+    <div>
+      <h1>Content Collection Overview</h1>
+    </div>
+    <div>
+      <h2>Services We Offer</h2>
+      <ul>{services.map((s) => <li role="listitem">{s.data.title}</li>)}</ul>
+    </div>
+    <div class="post-wrapper">
+      <h2>Posts</h2>
+      <div>{posts.slice(0, 3).map((p) => <PostCard post={p} />)}</div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,9 @@
+name: James Lin
+bio: James is a results-driven marketing manager known for impactful strategies. With a strong business acumen, he excels in driving brand awareness and engagement through digital marketing, social media campaigns, and data-driven optimization.
+headshot: "./james-lin.jpg"
+role: Marketing
+email: james@company.com
+owned_services:
+  - OpenShift Ansible Broker
+  - OpenShift Container Platform
+  - Red Hat Satellite
